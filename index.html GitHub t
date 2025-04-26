@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Image Compressor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background: #ffffff;
+    }
+    header {
+      background-color: #007BFF;
+      color: #fff;
+      padding: 1rem 0;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2rem;
+      font-weight: 600;
+    }
+    nav {
+      margin-top: 10px;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+    }
+    main h2 {
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+      color: #333;
+    }
+    input[type="file"] {
+      margin: 10px 0;
+      padding: 10px;
+      font-size: 1rem;
+    }
+    .button-wrapper {
+      margin-top: 20px;
+    }
+    button {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      font-size: 1rem;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .spinner {
+      display: none;
+      margin-top: 10px;
+    }
+    .spinner::after {
+      content: '';
+      width: 24px;
+      height: 24px;
+      border: 3px solid #ccc;
+      border-top: 3px solid #007BFF;
+      border-radius: 50%;
+      display: inline-block;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    footer {
+      background-color: #007BFF;
+      color: #fff;
+      text-align: center;
+      padding: 1rem 0;
+      font-size: 0.9rem;
+    }
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+      nav a {
+        font-size: 0.9rem;
+      }
+      main h2 {
+        font-size: 1.5rem;
+      }
+      button {
+        width: 100%;
+        max-width: 250px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Free Image Compressor</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+  </nav>
+</header>
+
+<main>
+  <h2>Compress Your Image</h2>
+  <input type="file" id="fileInput">
+  <div class="button-wrapper">
+    <button id="compressBtn">Compress</button>
+    <div class="spinner" id="spinner"></div>
+  </div>
+</main>
+
+<footer>
+  © 2025 FreeImageCompressor. Powered by JSR Digital Marketing Solutions.
+</footer>
+
+<script>
+  const compressBtn = document.getElementById('compressBtn');
+  const spinner = document.getElementById('spinner');
+  compressBtn.addEventListener('click', () => {
+    spinner.style.display = 'inline-block';
+    compressBtn.disabled = true;
+    setTimeout(() => {
+      spinner.style.display = 'none';
+      compressBtn.disabled = false;
+      alert('Image compressed successfully! (Demo)');
+    }, 2000);
+  });
+</script>
+
+</body>
+</html>
