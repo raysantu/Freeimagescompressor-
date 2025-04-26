@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Compress images online for free with FreeImageCompressor. Fast, secure, and no watermark.">
+  <meta name="keywords" content="free image compressor, online image compression, jpeg png compress">
+  <meta name="author" content="JSR Digital Marketing Solutions">
+  <title>Free Image Compressor - Compress Images Online</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Free Image Compressor</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="upload-section">
+      <h2>Compress Your Image</h2>
+      <input type="file" id="upload" accept="image/*">
+      <button onclick="compressImage()">Compress</button>
+      <br>
+      <canvas id="canvas" style="display:none;"></canvas>
+      <br>
+      <a id="downloadLink" style="display:none;" download="compressed-image.jpg">Download Compressed Image</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 FreeImageCompressor. Powered by JSR Digital Marketing Solutions.</p>
+  </footer>
+
+  <script src="compress.js"></script>
+</body>
+</html>
